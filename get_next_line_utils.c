@@ -6,7 +6,7 @@
 /*   By: pgaric <pgaric@student.42wolfsburg.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/26 16:33:38 by pgaric            #+#    #+#             */
-/*   Updated: 2022/05/31 11:09:09 by pgaric           ###   ########.fr       */
+/*   Updated: 2022/05/31 12:27:52 by pgaric           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,7 +85,7 @@ int	encounter_newline_sign(char *nline)
 	return (-1);
 }
 
-char	*return_lineread_and_stored(char *nline, char **stored)
+char	*return_lineread_and_stored(char *nline, char **stored, int fd)
 {
 	int	len_nline;
 	int	len_newline;
@@ -94,11 +94,11 @@ char	*return_lineread_and_stored(char *nline, char **stored)
 	len_nline = ft_strlen(nline);
 	if (len_newline == len_nline - 1)
 	{
-		free(stored[1]);
-		stored[1] = NULL;
+		free(stored[fd]);
+		stored[fd] = NULL;
 		return (nline);
 	}
-	stored[1] = ft_strdup(nline + len_newline + 1);
+	stored[fd] = ft_strdup(nline + len_newline + 1);
 	nline[len_newline + 1] = '\0';
 	return (nline);
 }
