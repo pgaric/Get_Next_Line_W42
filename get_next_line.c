@@ -6,7 +6,7 @@
 /*   By: pgaric <pgaric@student.42wolfsburg.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/26 16:33:41 by pgaric            #+#    #+#             */
-/*   Updated: 2022/05/31 11:09:36 by pgaric           ###   ########.fr       */
+/*   Updated: 2022/05/31 11:53:07 by pgaric           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ char	*get_next_line(int fd)
 			return (return_lineread_and_stored(nline, stored));
 	}
 	read_value = read(fd, buffer, BUFFER_SIZE);
-	while (read_value != 0)
+	while (read_value > 0)
 	{	
 		nline = storing_line_content(nline, buffer, read_value);
 		if (encounter_newline_sign(nline) != -1)
