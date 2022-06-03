@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.c                                    :+:      :+:    :+:   */
+/*   get_next_line_bonus.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pgaric <pgaric@student.42wolfsburg.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/26 16:33:41 by pgaric            #+#    #+#             */
-/*   Updated: 2022/06/03 14:09:10 by pgaric           ###   ########.fr       */
+/*   Updated: 2022/06/03 12:31:26 by pgaric           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 char	*get_next_line(int fd)
 {
-	static char	*stored[4096];
+	static char	*stored[1024];
 	char		*nline;
 	char		buffer[BUFFER_SIZE + 1];
 	int			read_value;
